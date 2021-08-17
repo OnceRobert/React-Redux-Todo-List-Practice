@@ -1,0 +1,21 @@
+.TodoItem{
+    background-color: plum;
+    width: 200px;
+    margin:auto;
+    padding:15px;
+    border: 3px;
+    border-style: solid;
+    border-color: violet;
+    margin-top: 5px;
+    color: darkviolet;
+}
+
+.TodoItem.done{
+    background-color: pink;
+    text-decoration: line-through;
+}
+
+.removeButton{
+    float: right;
+    text-align: right;
+}
