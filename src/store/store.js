@@ -3,7 +3,8 @@ import todosReducer from "../features/todos/reducers/todosSlice"
 
 const store = configureStore({
     reducer: {
-        todoList: todosReducer
+        todoList: todosReducer,
+        newTodoItem: {},
     },
 });
 
