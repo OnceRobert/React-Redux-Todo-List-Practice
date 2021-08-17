@@ -6,7 +6,7 @@ import TodoList from './features/todos/components/TodoList';
 function App() {
   return (
     <div className="App">
-      <TodoGroup />
+      <TodoList />
     </div>
   );
 }

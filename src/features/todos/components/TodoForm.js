@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import store from '../../../store/store';
+import { AddTodo } from '../reducers/todosSlice';
 
 function TodoForm(){
     const [text, setText] = useState("");
+    const dispatch = useDispatch();
 
     function changeHandler(event){
         setText(event.target.value);
@@ -10,17 +13,8 @@ function TodoForm(){
     }
     
     function addHandler(){
-        console.log("Will add to do list: ", text);
-        const generatedId = Date.now();
-        store.newTodoItem = 
-        
-        {
-            id: {generatedId},
-            text: text,
-            done: false
-        };
-        
-        
+        dispatch(AddTodo(text));
+        //console.log("Will add to do list: ", text);        
     }
 
     return(
