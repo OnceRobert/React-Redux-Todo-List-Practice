@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import store from '../../../store/store';
 import { AddTodo } from '../reducers/todosSlice';
+import {addTodo} from '../../apis/todos'
 
 function TodoForm(){
     const [text, setText] = useState("");
@@ -13,13 +14,15 @@ function TodoForm(){
     }
     
     function addHandler(){
-        dispatch(AddTodo(text));
+        addTodo(text).then((response) => {
+            dispatch(AddTodo(text));
+        })
         //console.log("Will add to do list: ", text);        
     }
 
-    return(
-        <div>
-            Todo Form: 
+    return(     //Add handling for blank input and remove textbox content add
+        <div className="CenterMe">
+            Todo Form: &nbsp;
             <input type="text"
                 placeholder="input a new item"
                 value={text}

@@ -1,0 +1,24 @@
+h3{
+    font-family: Impact;
+    font-size: x-large;
+    text-align: center;
+}
+
+div{
+    padding: 10px;
+}
+
+button{
+    border-color:violet;
+    background-color:pink ;
+    color: purple;
+}
+
+input{
+    border-radius: 5px;
+}
+
+.CenterMe{
+    float: center;
+    align: center;
+}
