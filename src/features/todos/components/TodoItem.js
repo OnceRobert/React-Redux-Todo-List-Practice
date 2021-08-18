@@ -18,7 +18,9 @@ function TodoItem(props){
     }
 
     function handleRemove(event){
+        removeTodo(props.itemId).then(
             dispatch(RemoveTodo(props.itemId))
+        )
         event.stopPropagation();
         
     }
