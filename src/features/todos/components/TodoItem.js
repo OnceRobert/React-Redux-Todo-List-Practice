@@ -11,14 +11,14 @@ function TodoItem(props){
     const dispatch = useDispatch();
 
     function handleClick(){
+        updateTodo(props.itemId,{done: !todo.done}).then((response) =>{
             dispatch(ToggleTodo(props.itemId));
-        
+        });
         console.log("I have been Clicked");
     }
 
     function handleRemove(event){
             dispatch(RemoveTodo(props.itemId))
-
         event.stopPropagation();
         
     }
