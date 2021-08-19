@@ -15,6 +15,8 @@ function TodoForm(){
     }
     
     function addHandler(){
+        if(text==="")
+            alert("Input Cannot be null");
         addTodo(text).then((response) => {
             dispatch(AddTodo(response.data));
             setText("");
@@ -22,7 +24,7 @@ function TodoForm(){
         //console.log("Will add to do list: ", text);        
     }
 
-    return(     //Add handling for blank input and remove textbox content add
+    return(     
         <div className="CenterMe">
             Todo Form: &nbsp;
             <input type="text"

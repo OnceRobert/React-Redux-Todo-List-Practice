@@ -6,8 +6,6 @@
     border: 3px;
     border-style: solid;
     border-color: violet;
-    margin-top: 5px;
-    margin-bottom: 2px;
     color: darkviolet;
     border-radius: 15px;
 }
@@ -17,12 +15,47 @@
     text-decoration: line-through;
 }
 
-.removeButton{
+.Button{
     float: right;
     text-align:right;
+    border-style: none;
+    backface-visibility: hidden;
+    background-color: transparent;
+}
+
+.remove{
+    float: right;
+    text-align:right;
+}
+
+.update{
+    float: left;
+    text-align: left;
 }
 
 
 .CenterMe{
     text-align: center;
+}
+
+.Modal{
+    background-color: pink;
+    color: purple;
+}
+
+.ant-modal-content{
+    padding: 24px;
+    font-size: 14px;
+    line-height: 1.5715;
+    word-wrap: break-word;
+    background-color: pink;
+  }
+
+
+.ant-modal-body{
+    background-color: pink;
+}
+
+.ant-modal-footer{
+    background-color: pink;
 }

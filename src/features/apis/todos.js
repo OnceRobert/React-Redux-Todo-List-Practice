@@ -14,4 +14,4 @@ export const removeTodo = (id) =>{
 
 export const updateTodo = (id,updateTodo) => {
     return api.put(`/todos/${id}`,updateTodo);
-}
+} 

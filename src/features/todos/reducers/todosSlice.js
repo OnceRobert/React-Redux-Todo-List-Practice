@@ -4,16 +4,7 @@ import { v4 as uuid} from "uuid";
 import { getTodos } from "../../apis/todos";
 
 const todosAdapter = createEntityAdapter();
-const initialState = todosAdapter.getInitialState({
-    ids: ["1"],
-    entities: {
-        1:{
-            id:"3",
-            text: "pay for cbz",
-            done: false,
-        }
-    },
-});
+const initialState = todosAdapter.getInitialState();
 // const initialState = todosAdapter.getInitialState({
 //     ids: SampleData.map((item) => item.id),   
 //     entities: getTodos()
@@ -38,6 +29,10 @@ const todoSlice = createSlice({
         },
         AddTodos(state, action){
             todosAdapter.addMany(state, action.payload);
+        },
+        EditTodo(state, action){
+            const todo = state.entities[action];
+            todosAdapter.updateOne(state,action);
         }
 
         
@@ -54,7 +49,7 @@ export const {
         (state) => state.todoList
     );
 
-export const {AddTodo, ToggleTodo, RemoveTodo, AddTodos} = todoSlice.actions;
+export const {AddTodo, ToggleTodo, RemoveTodo, AddTodos, EditTodo} = todoSlice.actions;
 
 const selectTodoList = (state) => state.todoList.entities;
 
