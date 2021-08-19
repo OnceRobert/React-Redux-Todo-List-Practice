@@ -21,11 +21,13 @@ function App() {
               <Link to="/done">go to the done list page</Link>
             </ul>
             <Content>
+              <div className="App">
             <Switch>
               <Route exact path="/" component={TodoList}/>
               <Route exact path="/done" component={DoneList} />
               <Route path="*" component={NotFoundPage} />
             </Switch>
+            </div>
             </Content>
             
           </BrowserRouter>

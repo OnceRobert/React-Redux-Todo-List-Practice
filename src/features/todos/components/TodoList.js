@@ -16,7 +16,7 @@ function TodoList(){
         });
     }, []);
     return(
-        <div>
+        <div className="App">
             <h3>Your To Do List: </h3>
             <TodoForm />
             <TodoGroup />

@@ -5,23 +5,13 @@ import { getTodos } from "../../apis/todos";
 
 const todosAdapter = createEntityAdapter();
 const initialState = todosAdapter.getInitialState({
-    ids: ["1", "2","3"],
+    ids: ["1"],
     entities: {
         1:{
-            id:"1",
-            text: "testing todo",
-            done: false,
-        },
-        2:{
-            id:"2",
-            text: "testing todo two",
-            done: false,
-        },
-        3:{
             id:"3",
             text: "pay for cbz",
             done: false,
-        },
+        }
     },
 });
 // const initialState = todosAdapter.getInitialState({
@@ -35,10 +25,8 @@ const todoSlice = createSlice({
     initialState: initialState,
     reducers: {
         AddTodo(state, action){
-            todosAdapter.addOne(state,action.payload);
-            //console.log("Add todo action: ", action);
+            todosAdapter.addOne(state,action);
             return state;
-
         },
         ToggleTodo(state, action){
             const todo = state.entities[action.payload];

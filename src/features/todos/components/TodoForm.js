@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import store from '../../../store/store';
 import { AddTodo } from '../reducers/todosSlice';
 import {addTodo} from '../../apis/todos'
+import { EditOutlined } from '@ant-design/icons';
 
 function TodoForm(){
     const [text, setText] = useState("");
@@ -15,7 +16,8 @@ function TodoForm(){
     
     function addHandler(){
         addTodo(text).then((response) => {
-            dispatch(AddTodo(text));
+            dispatch(AddTodo(response.data));
+            setText("");
         })
         //console.log("Will add to do list: ", text);        
     }
@@ -28,7 +30,7 @@ function TodoForm(){
                 value={text}
                 onChange={changeHandler}
             />
-            <button onClick={addHandler}>Add</button>
+            <button onClick={addHandler}><EditOutlined /></button>
         </div>
 
     );
