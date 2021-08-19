@@ -34,8 +34,6 @@ const todoSlice = createSlice({
             const todo = state.entities[action];
             todosAdapter.updateOne(state,action);
         }
-
-        
     }
 });
 

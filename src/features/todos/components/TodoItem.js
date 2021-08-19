@@ -66,7 +66,7 @@ function TodoItem(props){
     return (
         <div>
             <div className={`TodoItem ${todoStatus}`} onClick={handleClick}>
-                <button className="update Button" onClick={showModal}><EditOutlined /></button>
+                <button className="update Button" onClick={showModal}>{todoStatus!=="done"? <EditOutlined /> : ""}</button>
                 {text}  
                 <button className="remove Button" onClick={handleRemove}>🍭</button>
             </div>
